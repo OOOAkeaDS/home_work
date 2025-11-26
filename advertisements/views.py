@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from advertisements.models import Advertisements
 
-def home_view(request):
-  return HttpResponse("Главная страница")
+def Ad(request):
+  advertisements = Advertisements.objects.all()
+  return render(request = request, template_name = 'advertisements/index.html', context = {'advertisements': advertisements})
