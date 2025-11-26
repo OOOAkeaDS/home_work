@@ -1,8 +1,5 @@
-from tabnanny import verbose
-from unicodedata import category
-from django.db import models
-from django.db.models.functions import Length
 
+from django.db import models
 
 class Category(models.Model):
   title = models.CharField(max_length=50, verbose_name="Категория")
