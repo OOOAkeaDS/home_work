@@ -4,7 +4,7 @@ class AdForm(forms.Form):
   title = forms.CharField(max_length=200, label="Заголовок объявления:", required=False,
     widget=forms.TextInput(attrs={
       'placeholder': "заголовок (максимальная длина 200 символов)"
-    }) # Можно передавать другие атрибуты, например, "class": 'title-input'
+    })
   )
 
   text = forms.CharField(label="Содержимое объявления:",

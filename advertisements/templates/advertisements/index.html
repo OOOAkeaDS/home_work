@@ -3,16 +3,16 @@
   Доска объявлений
 {% endblock title %}
 {% block contents %}
-    <div>
+    <div class="ads-list">
       {% if advertisements %}
         {% for i in advertisements %}
-        <h3>
-          {{i.title}}
-        </h3>
-        <p>
-          {{i.text}}
-        </p>
+        <div class="ad-item">
+          <h3>{{ i.title }}</h3>
+          <p>{{ i.text }}</p>
+        </div>
         {% endfor %}
+      {% else %}
+        <p>Объявлений пока нет.</p>
       {% endif %}
     </div>
 {% endblock contents %}

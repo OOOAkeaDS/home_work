@@ -10,12 +10,14 @@
       {% endblock title %}
     </title>
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% block extra_css %}
+    {% endblock extra_css %}
 </head>
 <body>
   <header>
-    <nav></nav>
+    <nav>
       <a href="{% url "ads_list" %}">Объявления</a>
-      <a href="{% url "new_ad" %}">Новое объявление</a>
+      <a href="{% url "ad_add" %}">Новое объявление</a>
     </nav>
   </header>
   <main>

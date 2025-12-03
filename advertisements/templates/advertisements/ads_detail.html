@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+  {{ ad.title }}
+{% endblock title %}
+
+{% block contents %}
+  <div class="detail-page">
+    <a href="{% url 'ads_list' %}" class="back-link">&larr; Назад</a>
+    <h1>{{ ad.title }}</h1>
+    <p>{{ ad.text }}</p>
+    <div class="detail-meta">
+      <p>Дата создания: {{ ad.created_at|date:"d.m.Y H:i" }}</p>
+      <p>ID объявления: {{ ad.id }}</p>
+    </div>
+  </div>
+{% endblock contents %}
