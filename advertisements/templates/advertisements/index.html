@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Доска объявлений</title>
-</head>
-<body>
-  <header>
-    <nav></nav>
-      <a href="#">Главная</a>
-      <a href="#">Объявления</a>
-    </nav>
-  </header>
-  <main>
+{% extends 'base.html' %}
+{% block title %}
+  Доска объявлений
+{% endblock title %}
+{% block contents %}
     <div>
       {% if advertisements %}
         {% for i in advertisements %}
@@ -25,6 +15,4 @@
         {% endfor %}
       {% endif %}
     </div>
-  </main>
-</body>
-</html>
+{% endblock contents %}
