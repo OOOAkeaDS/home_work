@@ -1,4 +1,6 @@
+from unicodedata import category
 from django import forms
+from .models import Category
 
 class AdForm(forms.Form):
   title = forms.CharField(max_length=200, label="Заголовок объявления:", required=False,
@@ -12,6 +14,15 @@ class AdForm(forms.Form):
       'row': 3
     })
   )
+  
+  category = forms.ModelChoiceField(queryset=Category.objects.all(), 
+    empty_label="Выберите категорию",
+    label="Категория",
+    widget=forms.Select(attrs={'class': "form-control"
+    })
+  )
+  
+  isActive = True
 
   def clean_title(self):
     title = self.cleaned_data['title'].strip()
@@ -23,3 +34,4 @@ class AdForm(forms.Form):
       raise forms.ValidationError("Заголовок не должен быть короче 5 символов.")
     
     return title
+  
